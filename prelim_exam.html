@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div style="display:inline-grid;margin-right: 40px;">
+	Enter C value:
+	<br>
+	<div style="border: solid 1px #000;min-height:18px;">
+		<p id="c" style="margin: 0;">0</p>
+	</div>
+	<br>
+	<button type="button" onclick="getC()">Enter C</button>
+	<br>
+	<button type="button" onclick="document.getElementById('celcius').innerHTML = cToF(c)">F to C</button>
+	<br>
+	<p id="celcius"></p>
+</div>
+
+<div style="display:inline-grid;">
+	Enter F value:
+	<br>
+	<div style="border: solid 1px #000;min-height:18px;">
+		<p id="f" style="margin: 0;">0</p>
+	</div>
+	<br>
+	<button type="button" onclick="getF()">Enter F</button>
+	<br>
+	<button type="button" onclick="document.getElementById('fahrenheit').innerHTML = fToC(f)">F to C</button>
+	<br>
+	<p id="fahrenheit"></p>
+</div>
+
+<script>
+function getC(input) {
+    var c = prompt("Enter C value");
+	console.log(c);
+        document.getElementById("c").innerHTML = c;
+}
+
+function getF(input) {
+    var f = prompt("Enter F value");
+    if (f != null) {
+        document.getElementById("f").innerHTML = f;
+    }
+}
+
+function cToF(input) {
+	var f = (9 * input.innerHTML + (32 * 5)) / 5;
+	console.log(f);
+  	return f.toFixed(2) + " F";
+}
+
+function fToC(input) {
+	var c = (5 * (input.innerHTML - 32)) / 9;
+	console.log(c);
+  	return c.toFixed(2) + " C";
+}
+</script>
+
+</body>
+</html> 
